@@ -1,0 +1,56 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}language-toggle-active{% endblock %}
+{% block link_target_request_tab       %}language-toggle-active-request{% endblock %}
+{% block link_target_request_tab_pane  %}language-toggle-active-request{% endblock %}
+{% block link_target_response_tab      %}language-toggle-active-response{% endblock %}
+{% block link_target_response_tab_pane %}language-toggle-active-response{% endblock %}
+
+
+{% block title %}
+Change active state of a language
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/language/admin/:pk/toggle-active/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> is_active </td>
+            <td> <code> boolean </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> is it activated ?  </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+}
+</code></pre></div>
+{% endblock response %}

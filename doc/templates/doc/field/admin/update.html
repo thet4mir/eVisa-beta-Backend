@@ -1,0 +1,377 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}field-update{% endblock %}
+{% block link_target_request_tab       %}field-update-request{% endblock %}
+{% block link_target_request_tab_pane  %}field-update-request{% endblock %}
+{% block link_target_response_tab      %}field-update-response{% endblock %}
+{% block link_target_response_tab_pane %}field-update-response{% endblock %}
+
+
+{% block title %}
+Update Field
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/visa/field/:pk/update/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload: Field</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> label </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> field name.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> code_name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> short name of field.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> kind </td>
+            <td> <code> int </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> type of field.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> description </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> description of field.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> is_required </td>
+            <td> <code> boolean </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> Boolean value that shows required or not required .  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> is_required_error </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> it shows the value when field is required and not filled.  </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Payload: Field Text</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> min_length </td>
+            <td> <code> integer </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> min length. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> min_length_error </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> max_length </td>
+            <td> <code> integer </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> max length. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> max_length_error </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> regex_chars </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> list of chars that only allows. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> regex_chars_error </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+    </tbody>
+</table>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'label': 'first name',
+        'code_name': 'first_name',
+        'kind': 1,
+        'description': 'some information about this field.',
+        'is_required': 1,
+        'is_required_error': 'You must fill this field!',
+        'min_length': '',
+        'min_length_error': '',
+        'max_length': 100,
+        'max_length_error': '',
+        'regex_chars': "[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-]+",
+        'regex_chars_error': "no longer to approve special characters!"
+    }
+</code></pre></div>
+<p>Payload: Field Date</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> max_kind </td>
+            <td> <code> integer </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> kind. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> max_now_delta </td>
+            <td> <code> timedelta </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> max_date </td>
+            <td> <code> date </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> max length. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> max_message </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> min_kind </td>
+            <td> <code> integer </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> kind. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> min_now_delta </td>
+            <td> <code> timedelta </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> min_date </td>
+            <td> <code> date </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> min length. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> min_message </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Not Required </code> </td>
+            <td class="text-muted"> error message. </td>
+        </tr>
+    </tbody>
+</table>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'label': 'first name',
+        'code_name': 'first_name',
+        'kind': 2,
+        'description': 'some information about this field.',
+        'is_required': 1,
+        'is_required_error': 'You must fill this field!',
+        'max_kind': 2,
+        'max_now_delta': '',
+        'max_date': '',
+        'max_date_error': "Must be less then current date!",
+        'min_kind': 1,
+        'min_now_delta': '',
+        'min_date': '',
+        'min_date_error': '',
+    }
+</code></pre></div>
+<p>Payload: Field Choice</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> label </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> name that shows in select. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> code_name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> code name that must be unique. </td>
+        </tr>
+    </tbody>
+</table>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'label': 'first name',
+        'code_name': 'first_name',
+        'kind': 3,
+        'description': 'some information about this field.',
+        'is_required': 1,
+        'is_required_error': 'You must fill this field!',
+        'options': [
+            {
+                "label": "Эрэгтэй",
+                "code_name": "male1",
+            },
+            {
+                "label": "Эмэгтэй",
+                "code_name": "female1",
+            },
+        ],
+    }
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload: Field Text</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'is_success': True,
+        'item': {
+            'id': 1,
+            'label': 'First Name',
+            'code_name': 'first_name',
+            'kind': 1,
+            'description': 'some information about this field.',
+            'is_required': 1,
+            'is_required_error': 'You must fill this field!',
+            'created_at': '2021-03-12 10:17',
+            'updated_at': '2021-03-12 10:17',
+            'sub_field': {
+                'min_length': '',
+                'min_length_error': '',
+                'max_length': 100,
+                'max_length_error': '',
+                'regex_chars': "[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-]+",
+                'regex_chars_error': "no longer to approve special characters!"
+            }
+        }
+    }
+</code></pre></div>
+<p>Payload: Field Date</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'is_success': True,
+        'item': {
+            'id': 2,
+            'label': 'Birth Date',
+            'code_name': 'birth_date',
+            'kind': 2,
+            'description': 'some information about this field.',
+            'is_required': 1,
+            'is_required_error': 'You must fill this field!',
+            'created_at': '2021-03-12 10:17',
+            'updated_at': '2021-03-12 10:17',
+            'sub_field': {
+                'max_kind': 2,
+                'max_now_delta': '',
+                'max_date': '',
+                'max_message': "Must be less then current date!",
+                'min_kind': 1,
+                'min_now_delta': '',
+                'min_date': '',
+                'min_message': '',
+            }
+        }
+    }
+</code></pre></div>
+<p>Payload: Field Choice</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'is_success': True,
+        'item': {
+            'id': 3,
+            'label': 'Birth Date',
+            'code_name': 'birth_date',
+            'kind': 3,
+            'description': 'some information about this field.',
+            'is_required': 1,
+            'is_required_error': 'You must fill this field!',
+            'created_at': '2021-03-12 10:17',
+            'updated_at': '2021-03-12 10:17',
+            'sub_field': {
+                [
+                    {
+                        'id': 1
+                        "label": "new label",
+                        "code_name": "male",
+                    },
+                    {
+                        "id": 2
+                        "label": "Female",
+                        "code_name": "female",
+                    },
+                    {
+                        "id": 3
+                        "label": "other",
+                        "code_name": "other",
+                    },
+                ],
+            }
+        }
+    }
+</code></pre></div>
+{% endblock response %}

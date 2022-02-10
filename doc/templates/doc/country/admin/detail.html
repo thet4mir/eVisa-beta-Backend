@@ -1,0 +1,52 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}country-detail{% endblock %}
+{% block link_target_request_tab       %}country-detail-request{% endblock %}
+{% block link_target_request_tab_pane  %}country-detail-request{% endblock %}
+{% block link_target_response_tab      %}country-detail-response{% endblock %}
+{% block link_target_response_tab_pane %}country-detail-response{% endblock %}
+
+
+{% block title %}
+Country detail
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/country/admin/:pk/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "item": {
+        "id": 1,
+        "name": "...",
+        "nationality": "...",
+        "is_active": false,
+        'code_alpha2': "...",
+        'code_alpha3': "...",
+        'code_numeric': "...",
+        "created_at": "2021-02-07 00:00:00",
+        "updated_at": "2021-02-07 00:00:00"
+    },
+}
+</code></pre></div>
+{% endblock response %}

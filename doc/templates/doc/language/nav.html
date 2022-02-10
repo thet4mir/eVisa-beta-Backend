@@ -1,0 +1,21 @@
+{% with nav_id="language_nav" %}
+<li class="nav-item">
+    <a href="#{{ nav_id }}" class="float-end" aria-expanded="false" data-bs-toggle="collapse" style="color: #AEB7C2">
+        <i class="bi-caret-right-square"></i>
+    </a>
+    <a href="#language-doc" class="nav-link" style="color: #AEB7C2">Language</a>
+
+    <div class="collapse" id="{{ nav_id }}">
+        <ul class="nav ms-3 flex-column">
+            {% include "../_nav_item.html" with href="#language-create" content="/api/language/admin/create/" %}
+            {% include "../_nav_item.html" with href="#language-all" content="/api/language/admin/all/" %}
+            {% include "../_nav_item.html" with href="#language-detail" content="/api/language/admin/:pk/" %}
+            {% include "../_nav_item.html" with href="#language-toggle-active" content="/api/language/admin/:pk/toggle-active/" %}
+            {% include "../_nav_item.html" with href="#language-set-default" content="/api/language/admin/:pk/set-default/" %}
+            {% include "../_nav_item.html" with href="#language-update" content="/api/language/admin/:pk/update/" %}
+            {% include "../_nav_item.html" with href="#language-delete" content="/api/language/admin/:pk/delete/" %}
+            {% include "../_nav_item.html" with href="#language-public-all" content="/api/language/all/" is_public=1 %}
+        </ul>
+    </div>
+</li>
+{% endwith %}

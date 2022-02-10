@@ -1,0 +1,44 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}visa-person-number-statistics{% endblock %}
+{% block link_target_request_tab       %}visa-person-number-statistics-request{% endblock %}
+{% block link_target_request_tab_pane  %}visa-person-number-statistics-request{% endblock %}
+{% block link_target_response_tab      %}visa-person-number-statistics-response{% endblock %}
+{% block link_target_response_tab_pane %}visa-person-number-statistics-response{% endblock %}
+
+
+{% block title %}
+Visa person number statistics
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/visa/person-number/admin/statistics/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "used": 200,
+    "unused": 999800,
+    "total": 1000000,
+}
+</code></pre></div>
+{% endblock response %}

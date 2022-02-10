@@ -1,0 +1,89 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}language-update{% endblock %}
+{% block link_target_request_tab       %}language-update-request{% endblock %}
+{% block link_target_request_tab_pane  %}language-update-request{% endblock %}
+{% block link_target_response_tab      %}language-update-response{% endblock %}
+{% block link_target_response_tab_pane %}language-update-response{% endblock %}
+
+
+{% block title %}
+Update language
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/language/admin/:pk/update/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> name of language  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> name_local </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> local name of language  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> code_name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> code of language  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> is_active </td>
+            <td> <code> boolean </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> this is activated  </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "item": {
+        "id": 1,
+        "name": "...",
+        "name_local": "...",
+        "code_name": "...",
+        "is_active": false,
+        "is_default": false,
+        "created_at": "2021-02-07 00:00",
+        "updated_at": "2021-02-07 00:00"
+    },
+    "form_errors": {}
+}
+</code></pre></div>
+{% endblock response %}

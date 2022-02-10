@@ -1,0 +1,145 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}visa-submit{% endblock %}
+{% block link_target_request_tab       %}visa-submit-request{% endblock %}
+{% block link_target_request_tab_pane  %}visa-submit-request{% endblock %}
+{% block link_target_response_tab      %}visa-submit-response{% endblock %}
+{% block link_target_response_tab_pane %}visa-submit-response{% endblock %}
+
+
+{% block title %}
+Create Visa
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/visa/submit/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'visa_kind': 1,
+        'country': 2,
+        'date_of_arrival': '2021-05-01',
+        'email': 'tamiraatsogbayar@gmail.com',
+        'phone': '883773471',
+        'address': 'USA Applewood 1600 19',
+        'person': [
+            {
+                'document': 1,
+                'image_document': "...binary string..."
+                'image_portrait': "...binary string..."
+                'values': [
+                    {
+                        'doc_field': 1,
+                        'field': 1,
+                        'value': 'Tamir',
+                    },
+                    {
+                        'doc_field': 2,
+                        'field': 2,
+                        'value': 'Tsogbayr',
+                    },
+                    {
+                        'doc_field': 3,
+                        'field': 3,
+                        'value': 1,
+                    },
+                    {
+                        'doc_field': 4,
+                        'field': 4,
+                        'value': '1995-10-22',
+                    },
+                ]
+            },
+            {
+                'document': 1,
+                'image_document': "...binary string..."
+                'image_portrait': "...binary string..."
+                'values': [
+                    {
+                        'doc_field': 5,
+                        'field': 1,
+                        'value': 'Zolboo',
+                    },
+                    {
+                        'doc_field': 6,
+                        'field': 2,
+                        'value': 'Tsogbayr',
+                    },
+                    {
+                        'doc_field': 7,
+                        'field': 3,
+                        'value': 1,
+                    },
+                    {
+                        'doc_field': 8,
+                        'field': 4,
+                        'value': '1997-04-22',
+                    },
+                ]
+            }
+        ],
+    }
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'country': 'AU',
+         'created_at': '2021-04-20 10:18:10',
+         'created_by': 'tamiraatsogbayar@gmail.com',
+         'date_of_arrival': '2021-05-01 00:00:00',
+         'days_stay': 30,
+         'days_valid': 180,
+         'entry_kind': 1,
+         'fee_person': '40.00',
+         'id': 5,
+         'person': [
+            [
+                {
+                    'first_name': 'Tamir'
+                },
+                {
+                    'last_name': 'Tsogbayr'
+                },
+                {
+                    'gender': 'male'
+                },
+                {
+                    'birth_date': '1995-10-22 00:00:00'
+                }
+            ],
+            [
+                {
+                    'first_name': 'Zolboo'
+                },
+                {
+                    'last_name': 'Tsogbayr'
+                },
+                {
+                    'gender': 'male'
+                },
+                {
+                    'birth_date': '1997-04-22 00:00:00'
+                }
+            ]
+        ],
+        'visa_kind': 742
+    }
+</code></pre></div>
+{% endblock response %}

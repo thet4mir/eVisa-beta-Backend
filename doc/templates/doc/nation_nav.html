@@ -1,0 +1,18 @@
+{% with nav_id="nation_nav" %}
+<li class="nav-item">
+    <a href="#{{ nav_id }}" class="float-end" aria-expanded="false" data-bs-toggle="collapse" style="color: #AEB7C2">
+        <i class="bi-caret-right-square"></i>
+    </a>
+    <a href="#nation-doc" class="nav-link" style="color: #AEB7C2">Nationality</a>
+
+    <div class="collapse" id="{{ nav_id }}">
+        <ul class="nav ms-3 flex-column">
+            {% include "./_nav_item.html" with href="#nationality-create" content="/api/nationality/admin/create/" %}
+            {% include "./_nav_item.html" with href="#nationality-all" content="/api/nationality/admin/all/" %}
+            {% include "./_nav_item.html" with href="#nationality-toggle-activate" content="/api/nationality/admin/int:pk/toggle-active/" %}
+            {% include "./_nav_item.html" with href="#nationality-update" content="/api/nationality/admin/int:pk/update/" %}
+            {% include "./_nav_item.html" with href="#nationality-remove" content="/api/nationality/admin/int:pk/remove/" %}
+        </ul>
+    </div>
+</li>
+{% endwith %}

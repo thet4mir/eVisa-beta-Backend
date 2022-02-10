@@ -1,0 +1,19 @@
+{% with nav_id="secure_nav" %}
+<li class="nav-item">
+    <a href="#{{ nav_id }}" class="float-end" aria-expanded="false" data-bs-toggle="collapse" style="color: #AEB7C2">
+        <i class="bi-caret-right-square"></i>
+    </a>
+    <a href="#secure-doc" class="nav-link" style="color: #AEB7C2">Authentication</a>
+
+    <div class="collapse" id="{{ nav_id }}">
+        <ul class="nav ms-3 flex-column">
+            {% include "../_nav_item.html" with href="#secure-login" content="/api/auth/login/" is_public=1 %}
+            {% include "../_nav_item.html" with href="#secure-login-options" content="/api/auth/login/options/" is_public=1 %}
+            {% include "../_nav_item.html" with href="#secure-logout" content="/api/auth/logout/" is_public=1 %}
+            {% include "../_nav_item.html" with href="#secure-csrf-refresh" content="/api/auth/csrf-refresh/" is_public=1 %}
+            {% include "../_nav_item.html" with href="#secure-me" content="/api/auth/me/" is_public=1 %}
+            {% include "../_nav_item.html" with href="#secure-change-password" content="/api/auth/change-password/" %}
+        </ul>
+    </div>
+</li>
+{% endwith %}

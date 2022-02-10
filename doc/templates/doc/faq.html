@@ -1,0 +1,448 @@
+<div id="faq-doc" class="doc-nav-target">
+    <div class="container-fluid py-3">
+        <div class="row">
+            <h2 class="fw-bold">
+                <i class="bi-bookmark float-end"></i>
+                FAQ
+            </h2>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container-fluid">
+    <h3 id="faq-create" class="doc-nav-target"> Create FAQ </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/create/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> question </td>
+                                <td> <code> string </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> question  </td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted"> answer </td>
+                                <td> <code> string </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> answer  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "question": "...",
+            "answer": "...",
+            "sort_order": "...",
+            "is_active": False,
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        }
+        "form_errors": {}
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-admin-list" class="doc-nav-target"> All FAQ For Admin </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/all/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "items": [
+            {
+                "id": 1,
+                "question": "...",
+                "answer": "...",
+                "sort_order": "...",
+                "is_active": False,
+                "created_at": "2021-02-07",
+                "updated_at": "2021-02-07"
+            },
+            {
+                "id": 2,
+                "question": "...",
+                "answer": "...",
+                "sort_order": "...",
+                "is_active": False,
+                "created_at": "2021-02-07",
+                "updated_at": "2021-02-07"
+            },
+        ]
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-save-sort" class="doc-nav-target"> Save Sort FAQ </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/int:pk/save-sort/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> sort_order </td>
+                                <td> <code> list </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> sort order list  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-toggle-active" class="doc-nav-target"> Toggle Update FAQ </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/int:pk/toggle-active/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> is_active </td>
+                                <td> <code> boolean </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> is it activated ?  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-update" class="doc-nav-target"> Update FAQ </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/int:pk/update/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> question </td>
+                                <td> <code> string </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> question  </td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted"> answer </td>
+                                <td> <code> string </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> answer  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "question": "...",
+            "answer": "...",
+            "sort_order": "...",
+            "is_active": False,
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        }
+        "form_errors": {}
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-detail" class="doc-nav-target"> Detail FAQ </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/int:pk/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "question": "...",
+            "answer": "...",
+            "sort_order": "...",
+            "is_active": False,
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        }
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-delete" class="doc-nav-target"> Deleta FAQ </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/admin/int:pk/delete/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="faq-public-list" class="doc-nav-target"> All FAQ For Public </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/faq/all/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "items": [
+            {
+                "id": 1,
+                "question": "...",
+                "answer": "..",
+            },
+            {
+                "id": 2,
+                "question": "...",
+                "answer": "..",
+            },
+            {
+                "id": 3,
+                "question": "...",
+                "answer": "..",
+            },
+        ]
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>

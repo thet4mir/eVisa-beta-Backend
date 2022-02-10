@@ -1,0 +1,157 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}visa-kind-update{% endblock %}
+{% block link_target_request_tab       %}visa-kind-update-request{% endblock %}
+{% block link_target_request_tab_pane  %}visa-kind-update-request{% endblock %}
+{% block link_target_response_tab      %}visa-kind-update-response{% endblock %}
+{% block link_target_response_tab_pane %}visa-kind-update-response{% endblock %}
+
+
+{% block title %}
+Update Visa Type
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/visa/kind/:pk/update/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> title </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> kind name.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> description </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> about kind.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> is_active </td>
+            <td> <code> boolean </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> boolean value that shows active or not active.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> days_stay </td>
+            <td> <code> positivesmallinteger </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> period of stay.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> days_valid </td>
+            <td> <code> positivesmallinteger </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> period of visa valid.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> fee_person </td>
+            <td> <code> positivesmallinteger </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> fee of visa per person.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> entry_kind </td>
+            <td> <code> int </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> Id of entry kind.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> documents </td>
+            <td> <code> list </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> List of document id for visa kind.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> visa_exempt_country </td>
+            <td> <code> list </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> List of country id for visa kind.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> fee_exempt_country </td>
+            <td> <code> list </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> List of country id for visa kind.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> discount_list </td>
+            <td> <code> list </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> List of discounts id for visa kind.  </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "title": "...",
+            "description": "...",
+            "is_active": "...",
+            "days_stay": "...",
+            "days_valid": "...",
+            "fee_person": "...",
+            "entry_kind": "...",
+            "documents": [
+                1,
+            ],
+            "visa_exempt_country": [ 1 , 2 , 3 ],
+            "fee_exempt_country": [ 1 , 2 , 3 ],
+            "discount_list": [
+                {
+                    "num_person": 10,
+                    "percent": 0.25,
+                },
+                {
+                    "num_person": 15,
+                    "percent": 0.5,
+
+                },
+            ],
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        },
+        "form_errors": {}
+    }
+</code></pre></div>
+{% endblock response %}

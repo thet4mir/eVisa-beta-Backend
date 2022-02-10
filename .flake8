@@ -1,0 +1,13 @@
+[flake8]
+#show-source = True
+max-line-length = 119
+ignore=
+    E203,
+    E241,
+    E221,
+    W503
+statistics = True
+exclude =
+    __pycache__,
+    **/migrations/*,
+    main/wsgi.py

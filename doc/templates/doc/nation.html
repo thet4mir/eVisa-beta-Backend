@@ -1,0 +1,306 @@
+<div id="nation-doc" class="doc-nav-target">
+    <div class="container-fluid py-3">
+        <div class="row">
+            <h2 class="fw-bold">
+                <i class="bi-bookmark float-end"></i>
+                Nationality
+            </h2>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container-fluid">
+    <h3 id="nationality-create" class="doc-nav-target"> Create nationality </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/nationality/admin/create/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> name </td>
+                                <td> <code> string </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> name of nationality  </td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted"> country_id </td>
+                                <td> <code> int </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> country id  </td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted"> is_active </td>
+                                <td> <code> boolean </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> this is activated  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "name": "...",
+            "is_active": False,
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        },
+        "form_errors": {}
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="nationality-all" class="doc-nav-target"> All Nationality For Admin </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/nationality/admin/all/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "items": [
+            {
+                "id": 1,
+                "name": "...",
+                "country": "...",
+                "is_active": False,
+                "created_at": "2021-02-07",
+                "updated_at": "2021-02-07"
+            },
+            {
+                "id": 2,
+                "country": "...",
+                "is_active": False,
+                "created_at": "2021-02-07",
+                "updated_at": "2021-02-07"
+            },
+        ]
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="nationality-toggle-activate" class="doc-nav-target"> Toggle active Nationality </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/nationality/admin/int:pk/toggle-active/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> is_active </td>
+                                <td> <code> boolean </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> is it activated ?  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "name": "...",
+            "is_active": True,
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        },
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="nationality-update" class="doc-nav-target"> Update Nationality </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/nationality/admin/int:pk/update/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted"> name </td>
+                                <td> <code> string </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> name of nationality  </td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted"> country_id </td>
+                                <td> <code> int </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> country id  </td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted"> is_active </td>
+                                <td> <code> boolean </code> </td>
+                                <td> <code> body </code> </td>
+                                <td> <code> Required </code> </td>
+                                <td class="text-muted"> this is activated  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+        "item": {
+            "id": 1,
+            "name": "...",
+            "is_active": False,
+            "created_at": "2021-02-07",
+            "updated_at": "2021-02-07"
+        },
+        "form_errors": {}
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>
+<div class="container-fluid">
+    <h3 id="nationality-remove" class="doc-nav-target"> Delete Nationality </h3>
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Request <span class="badge bg-success">POST</span></h4>
+                    <h5>/api/nationality/admin/int:pk/delete/</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th> Parameter </th>
+                            <th> Type </th>
+                            <th> Position </th>
+                            <th> # </th>
+                            <th> Description </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4> Response </h4>
+                </div>
+                <div class="card-body">
+                    <pre>
+    {
+        "is_success": true,
+    }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Container-Fluid -->
+<hr>

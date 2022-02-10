@@ -1,0 +1,47 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}config-test-send-mail{% endblock %}
+{% block link_target_request_tab       %}config-test-send-mail-request{% endblock %}
+{% block link_target_request_tab_pane  %}config-test-send-mail-request{% endblock %}
+{% block link_target_response_tab      %}config-test-send-mail-response{% endblock %}
+{% block link_target_response_tab_pane %}config-test-send-mail-response{% endblock %}
+
+
+{% block title %}
+Email test
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/config/admin/test-send-mail/
+{% endblock %}
+
+{% block content %}
+Туршилтаар мэйл илгээнэ.
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "send_to": "...",
+    "subject": "...",
+    "body": "..."
+}
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+}
+</code></pre></div>
+{% endblock response %}

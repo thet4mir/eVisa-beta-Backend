@@ -1,0 +1,56 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}user-all{% endblock %}
+{% block link_target_request_tab       %}user-all-request{% endblock %}
+{% block link_target_request_tab_pane  %}user-all-request{% endblock %}
+{% block link_target_response_tab      %}user-all-response{% endblock %}
+{% block link_target_response_tab_pane %}user-all-response{% endblock %}
+
+
+{% block title %}
+User list
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/user/all/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": true,
+        "items": [
+        {
+            "id": 1,
+            "username": "tamir@gmail.com",
+            "email": "tamir@gmail.com",
+            "first_name": "tamir",
+            "last_name": "tsogbayar",
+            "is_superuser": false,
+            "is_active": true,
+            "is_deleted": false,
+            "date_joined": "2021-02-07",
+            "last_login": null,
+            "updated_at": "2021-02-07"
+        },
+    }
+</code></pre></div>
+{% endblock response %}

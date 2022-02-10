@@ -1,0 +1,107 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}user-update{% endblock %}
+{% block link_target_request_tab       %}user-update-request{% endblock %}
+{% block link_target_request_tab_pane  %}user-update-request{% endblock %}
+{% block link_target_response_tab      %}user-update-response{% endblock %}
+{% block link_target_response_tab_pane %}user-update-response{% endblock %}
+
+
+{% block title %}
+User Update
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/user/:pk/update/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> email </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> email and use it for login into the program.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> password1 </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> password that can be use when you try to log in.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> password2 </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> this must be same as password1.  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> first_name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> your given name. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> last_name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> last name. </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> is_superuser </td>
+            <td> <code> boolean </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> user permission. </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": true,
+        "item": {
+        "id": 1,
+            "username": "tamir@gmail.com",
+            "email": "tamir@gmail.com",
+            "first_name": "tamir",
+            "last_name": "tsogbayar",
+            "is_superuser": false,
+            "is_active": true,
+            "is_deleted": false,
+            "date_joined": "2021-02-07",
+            "last_login": null,
+            "updated_at": "2021-02-07"
+        },
+        "form_errors": {}
+    }
+</code></pre></div>
+{% endblock response %}

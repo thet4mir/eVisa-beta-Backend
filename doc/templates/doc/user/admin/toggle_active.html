@@ -1,0 +1,50 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}user-toggle-active{% endblock %}
+{% block link_target_request_tab       %}user-toggle-active-request{% endblock %}
+{% block link_target_request_tab_pane  %}user-toggle-active-request{% endblock %}
+{% block link_target_response_tab      %}user-toggle-active-response{% endblock %}
+{% block link_target_response_tab_pane %}user-toggle-active-response{% endblock %}
+
+
+{% block title %}
+User Toggle Active
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/user/:pk/toggle-active/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload: success</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": true,
+    }
+</code></pre></div>
+
+<p>Payload: fail</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": false,
+        "error": 'Хэрэглэгч өөрийгөө идэвхгүй болгох боломжгүй!'
+    }
+</code></pre></div>
+{% endblock response %}

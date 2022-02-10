@@ -1,0 +1,52 @@
+{% extends "../layouts/endpoint.html" %}
+
+{% block link_target_title             %}secure-csrf-refresh{% endblock %}
+{% block link_target_request_tab       %}secure-csrf-refresh-request{% endblock %}
+{% block link_target_request_tab_pane  %}secure-csrf-refresh-request{% endblock %}
+{% block link_target_response_tab      %}secure-csrf-refresh-response{% endblock %}
+{% block link_target_response_tab_pane %}secure-csrf-refresh-response{% endblock %}
+
+
+{% block title %}
+CSRF Token Refresh
+{% endblock %}
+
+{% block http_method %}
+{% include "../_http_method.html" with method="get" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/auth/csrf-refresh/
+{% endblock %}
+
+{% block content %}
+Зарим API-аас дараах хариу буцаавал уг API-аар шинэ CSRF токен авна.
+<div class="bg-light border rounded py-1 ps-3"><pre><code>
+HTTP/1.1 403 Forbidden
+{"error": "csrf-error"}
+</code></pre></div>
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Header:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+Set-Cookie: csrftoken=...; expires=Fri, 25 Feb 2022 02:11:49 GMT; Max-Age=31449600; Path=/; SameSite=Lax
+</code></pre></div>
+
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true
+}
+</code></pre></div>
+{% endblock response %}

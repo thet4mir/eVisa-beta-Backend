@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <div style="height: calc(100% - 7rem); top: 7rem; width: 360px; background-color:#2B333E;  position: fixed; z-index: 1;" class="py-3 overflow-auto">
+            <nav>
+                <ul class="nav flex-column">
+                    {% include "./log/nav.html" %}
+                    {% include "./user/nav.html" %}
+                    {% include "./field/nav.html" %}
+                    {% include "./visa/nav.html" %}
+                    {% include "./visa_kind/nav.html" %}
+                    {% include "./document/nav.html" %}
+                    {% include "./visa_person_number/nav.html" %}
+                    {% include "./faq_nav.html" %}
+                    {% include "./error500_nav.html" %}
+                    {% include "./country/nav.html" %}
+                    {% include "./nation_nav.html" %}
+                    {% include "./language/nav.html" %}
+                    {% include "./auth/nav.html" %}
+                    {% include "./config/nav.html" %}
+                </ul>
+            </nav>
+        </div>
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" style="width: calc(100% - 360px); background-color:#f5f5fa; margin-left: 360px;">
+            {% include "./log/index.html" %}
+            {% include "./user/index.html" %}
+            {% include "./field/index.html" %}
+            {% include "./visa/index.html" %}
+            {% include "./visa_kind/index.html" %}
+            {% include "./document/index.html" %}
+            {% include "./visa_person_number/index.html" %}
+            {% include "./faq.html" %}
+            {% include "./error500.html" %}
+            {% include "./country/index.html" %}
+            {% include "./nation.html" %}
+            {% include "./language/index.html" %}
+            {% include "./auth/index.html" %}
+            {% include "./config/index.html" %}
+        </div><!-- Main -->
+    </div><!-- Main Row -->
+</div>
+
+<style>
+.doc-nav-target {
+    scroll-margin-top: 5rem;
+}
+</style>

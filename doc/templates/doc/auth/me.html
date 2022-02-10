@@ -1,0 +1,64 @@
+{% extends "../layouts/endpoint.html" %}
+
+{% block link_target_title             %}secure-me{% endblock %}
+{% block link_target_request_tab       %}secure-me-request{% endblock %}
+{% block link_target_request_tab_pane  %}secure-me-request{% endblock %}
+{% block link_target_response_tab      %}secure-me-response{% endblock %}
+{% block link_target_response_tab_pane %}secure-me-response{% endblock %}
+
+
+{% block title %}
+Authentication information
+{% endblock %}
+
+{% block http_method %}
+{% include "../_http_method.html" with method="get" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/auth/me/
+{% endblock %}
+
+{% block content %}
+Тухайн хэрэглэгчийн дараах мэдээллийг авна.
+<ul>
+    <li>нэвтэрсэн эсэх</li>
+    <li>superuser эрхтэй эсэх</li>
+</ul>
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload (нэвтрээгүй):</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "is_authenticated": false
+}
+</code></pre></div>
+
+<p>Payload (нэвтэрсэн):</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "is_authenticated": false,
+}
+</code></pre></div>
+
+<p>Payload (нэвтэрсэн, superuser эрхтэй):</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "is_authenticated": false,
+    "is_superuser": true,
+}
+</code></pre></div>
+{% endblock response %}

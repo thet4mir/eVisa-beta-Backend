@@ -1,0 +1,13 @@
+*.py[cod]
+*.sw[nop]
+
+venv
+main/settings/dev.py
+main/settings/prod.py
+test.py
+
+# tests for coverage
+.coverage
+htmlcov/*
+uploads/*
+!uploads/.keep

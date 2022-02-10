@@ -1,0 +1,60 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}log-all{% endblock %}
+{% block link_target_request_tab       %}log-all-request{% endblock %}
+{% block link_target_request_tab_pane  %}log-all-request{% endblock %}
+{% block link_target_response_tab      %}log-all-response{% endblock %}
+{% block link_target_response_tab_pane %}log-all-response{% endblock %}
+
+
+{% block title %}
+    Visa Document List
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+    /api/log/admin/all/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "items": [
+        {
+            'model_name': 'Country',
+            'instance_id': 4,
+            'payload': {'name': 'United States', 'is_active': True, 'code_alpha2': 'US', 'code_alpha3': 'USA', 'nationality': 'American', 'code_numeric': '840'},
+            'kind': 3,
+            'created_by': 5,
+            'created_at': '1900-00-00 00:00'
+        },
+        {
+            'model_name': 'Country',
+            'instance_id': 4,
+            'payload': {'name': 'United States', 'is_active': True, 'code_alpha2': 'US', 'code_alpha3': 'USA', 'nationality': 'American', 'code_numeric': '840'},
+            'kind': 2,
+            'created_by': 5,
+            'created_at': '1900-00-00 00:00'
+        }
+    ]
+}
+</code></pre></div>
+{% endblock response %}

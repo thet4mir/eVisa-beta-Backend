@@ -1,0 +1,50 @@
+{% extends "../layouts/endpoint.html" %}
+
+{% block link_target_title             %}secure-login{% endblock %}
+{% block link_target_request_tab       %}secure-login-request{% endblock %}
+{% block link_target_request_tab_pane  %}secure-login-request{% endblock %}
+{% block link_target_response_tab      %}secure-login-response{% endblock %}
+{% block link_target_response_tab_pane %}secure-login-response{% endblock %}
+
+
+{% block title %}
+User Login
+{% endblock %}
+
+{% block http_method %}
+{% include "../_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/auth/login/
+{% endblock %}
+
+{% block content %}
+<p>
+    Нэвтэрсэн хэрэглэгчийн нэр, нууц үгийг шалгаж
+    <code>{"is_success": true}</code>
+    гэсэн хариу буцаана.
+</p>
+<p>
+    Google recaptcha шалгана.
+</p>
+{% endblock %}
+
+
+{% block request %}
+<pre class="mb-0"><code>{
+    "username": "...",
+    "password": "...",
+    "g_recaptcha_response": ""
+}
+</code></pre>
+{% endblock request %}
+
+
+{% block response %}
+<pre class="mb-0"><code>{
+    "is_success": true
+}
+</code></pre>
+{% endblock response %}

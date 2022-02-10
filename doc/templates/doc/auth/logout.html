@@ -1,0 +1,34 @@
+{% extends "../layouts/endpoint.html" %}
+
+{% block link_target_title             %}secure-logout{% endblock %}
+{% block link_target_request_tab       %}secure-logout-request{% endblock %}
+{% block link_target_request_tab_pane  %}secure-logout-request{% endblock %}
+{% block link_target_response_tab      %}secure-logout-response{% endblock %}
+{% block link_target_response_tab_pane %}secure-logout-response{% endblock %}
+
+
+{% block title %}
+User Logout
+{% endblock %}
+
+{% block http_method %}
+{% include "../_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/auth/logout/
+{% endblock %}
+
+
+{% block request %}
+<pre class="mb-0"><code>{
+}</code></pre>
+{% endblock request %}
+
+
+{% block response %}
+<pre class="mb-0"><code>{
+    "is_success": true
+}</code></pre>
+{% endblock response %}

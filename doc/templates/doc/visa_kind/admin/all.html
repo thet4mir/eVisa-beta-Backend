@@ -1,0 +1,70 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}visa-kind-all{% endblock %}
+{% block link_target_request_tab       %}visa-kind-all-request{% endblock %}
+{% block link_target_request_tab_pane  %}visa-kind-all-request{% endblock %}
+{% block link_target_response_tab      %}visa-kind-all-response{% endblock %}
+{% block link_target_response_tab_pane %}visa-kind-all-response{% endblock %}
+
+
+{% block title %}
+    Visa Kind List
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+    /api/visa/kind/all/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": true,
+        "items": [
+            {
+                "id": 1,
+                "title": "...",
+                "description": "...",
+                "is_active": 1,
+                "days_stay": "...",
+                "days_valid": "...",
+                "entry_kind": "...",
+                "fee_visa": "...",
+                "fee_person": "...",
+                "created_at": "2021-02-07",
+                "updated_at": "2021-02-07"
+            },
+            {
+                "id": 2,
+                "title": "...",
+                "description": "...",
+                "is_active": 1,
+                "days_stay": "...",
+                "days_valid": "...",
+                "entry_kind": "...",
+                "fee_visa": "...",
+                "fee_person": "...",
+                "created_at": "2021-02-07",
+                "updated_at": "2021-02-07"
+            },
+        ]
+    }
+</code></pre></div>
+{% endblock response %}

@@ -1,0 +1,55 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}config-all{% endblock %}
+{% block link_target_request_tab       %}config-all-request{% endblock %}
+{% block link_target_request_tab_pane  %}config-all-request{% endblock %}
+{% block link_target_response_tab      %}config-all-response{% endblock %}
+{% block link_target_response_tab_pane %}config-all-response{% endblock %}
+
+
+{% block title %}
+Config List
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/config/admin/all/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "items": [
+        {
+            "name": "...",
+            "value": "...",
+            "created_at": "2021-02-07 00:00:00",
+            "updated_at": "2021-02-07 00:00:00"
+        },
+        {
+            "name": "...",
+            "value": "...",
+            "created_at": "2021-02-07 00:00:00",
+            "updated_at": "2021-02-07 00:00:00"
+        },
+    ]
+}
+</code></pre></div>
+{% endblock response %}

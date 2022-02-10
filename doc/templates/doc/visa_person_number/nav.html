@@ -1,0 +1,15 @@
+{% with nav_id="visa_person_number_nav" %}
+<li class="nav-item">
+    <a href="#{{ nav_id }}" class="float-end" aria-expanded="false" data-bs-toggle="collapse" style="color: #AEB7C2">
+        <i class="bi-caret-right-square"></i>
+    </a>
+    <a href="#visa-person-number-doc" class="nav-link" style="color: #AEB7C2">Visa Person Number</a>
+
+    <div class="collapse" id="{{ nav_id }}">
+        <ul class="nav ms-3 flex-column">
+            {% include "../_nav_item.html" with href="#visa-person-number-generate" content="/api/visa/person-number/admin/generate/" %}
+            {% include "../_nav_item.html" with href="#visa-person-number-statistics" content="/api/visa/person-number/admin/statistics/" %}
+        </ul>
+    </div>
+</li>
+{% endwith %}

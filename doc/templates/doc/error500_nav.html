@@ -1,0 +1,15 @@
+{% with nav_id="error500_nav" %}
+<li class="nav-item">
+    <a href="#{{ nav_id }}" class="float-end" aria-expanded="false" data-bs-toggle="collapse" style="color: #AEB7C2">
+        <i class="bi-caret-right-square"></i>
+    </a>
+    <a href="#error500-doc" class="nav-link" style="color: #AEB7C2">Error500</a>
+
+    <div class="collapse" id="{{ nav_id }}">
+        <ul class="nav ms-3 flex-column">
+            {% include "./_nav_item.html" with href="#error500-list" content="/api/error500/all/" %}
+            {% include "./_nav_item.html" with href="#error500-detail" content="/api/error500/int:pk/" %}
+        </ul>
+    </div>
+</li>
+{% endwith %}

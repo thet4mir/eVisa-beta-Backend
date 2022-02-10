@@ -1,0 +1,80 @@
+<div class="container-fluid mb-3">
+
+    <div class="row">
+        <div class="col-12">
+
+            <h3 id="{% block link_target_title %}{% endblock %}" class="doc-nav-target">
+                {% block title %}{% endblock %}
+            </h3>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="bg-white p-3 border rounded">
+
+                <div class="mb-3">
+                    <label class="form-label">Method:</label>
+                    {% block http_method %}{% endblock %}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">URL:</label>
+                    <input class="form-control" type="text" readonly value="{% block endpoint %}{% endblock %}"/>
+                </div>
+
+                <div class="mb-3">
+                    {% block content %}{% endblock %}
+                </div>
+
+            </div>
+        </div>
+        <div class="col-8">
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link active"
+                        type="button"
+                        data-bs-toggle="tab"
+                        data-bs-target="#{% block link_target_request_tab %}{% endblock %}"
+                        type="button"
+                        role="tab"
+                    >Request</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        type="button"
+                        data-bs-toggle="tab"
+                        data-bs-target="#{% block link_target_response_tab %}{% endblock %}"
+                        type="button"
+                        role="tab"
+                    >Response</button>
+                </li>
+            </ul>
+
+            <div class="tab-content bg-white border border-top-0 p-3 rounded-bottom">
+
+                <div
+                    class="tab-pane fade show active"
+                    id="{% block link_target_request_tab_pane %}{% endblock %}"
+                    role="tabpanel"
+                >
+                    {% block request %}{% endblock %}
+                </div>
+
+                <div
+                    class="tab-pane fade"
+                    id="{% block link_target_response_tab_pane %}{% endblock %}"
+                    role="tabpanel"
+                >
+                    {% block response %}{% endblock %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div><!-- Container-Fluid -->

@@ -1,0 +1,106 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}field-all{% endblock %}
+{% block link_target_request_tab       %}field-all-request{% endblock %}
+{% block link_target_request_tab_pane  %}field-all-request{% endblock %}
+{% block link_target_response_tab      %}field-all-response{% endblock %}
+{% block link_target_response_tab_pane %}field-all-response{% endblock %}
+
+
+{% block title %}
+    Field List
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+    /api/visa/field/all/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        'is_success': True,
+        'items': [
+            {
+                'id': 1,
+                'label': 'First Name',
+                'code_name': 'first_name',
+                'kind': 1,
+                'description': 'some information about this field.',
+                'created_at': '2021-03-12 10:17',
+                'updated_at': '2021-03-12 10:17',
+                'sub_field': {
+                    'min_length': '',
+                    'min_length_error': '',
+                    'max_length': 100,
+                    'max_length_error': '',
+                    'regex_chars': "[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-]+",
+                    'regex_chars_error': "no longer to approve special characters!"
+                }
+            },
+            {
+                'id': 2,
+                'label': 'Birth Date',
+                'code_name': 'birth_date',
+                'kind': 2,
+                'description': 'some information about this field.',
+                'created_at': '2021-03-12 10:17',
+                'updated_at': '2021-03-12 10:17',
+                'sub_field': {
+                    'max_kind': 2,
+                    'max_now_delta': '',
+                    'max_date': '',
+                    'max_message': "Must be less then current date!",
+                    'min_kind': 1,
+                    'min_now_delta': '',
+                    'min_date': '',
+                    'min_message': '',
+                }
+            },
+            {
+                'id': 3,
+                'label': 'Birth Date',
+                'code_name': 'birth_date',
+                'kind': 3,
+                'description': 'some information about this field.',
+                'created_at': '2021-03-12 10:17',
+                'updated_at': '2021-03-12 10:17',
+                'sub_field': [
+                    {
+                        'id': 1
+                        "label": "new label",
+                        "code_name": "male",
+                    },
+                    {
+                        "id": 2
+                        "label": "Female",
+                        "code_name": "female",
+                    },
+                    {
+                        "id": 3
+                        "label": "other",
+                        "code_name": "other",
+                    },
+                ],
+            }
+        ]
+    }
+</code></pre></div>
+{% endblock response %}

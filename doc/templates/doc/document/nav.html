@@ -1,0 +1,19 @@
+{% with nav_id="document_nav" %}
+<li class="nav-item">
+    <a href="#{{ nav_id }}" class="float-end" aria-expanded="false" data-bs-toggle="collapse" style="color: #AEB7C2">
+        <i class="bi-caret-right-square"></i>
+    </a>
+    <a href="#document-doc" class="nav-link" style="color: #AEB7C2">Visa Document</a>
+
+    <div class="collapse" id="{{ nav_id }}">
+        <ul class="nav ms-3 flex-column">
+            {% include "../_nav_item.html" with href="#document-all" content="/api/visa/document/all/" %}
+            {% include "../_nav_item.html" with href="#document-create" content="/api/visa/document/create/" %}
+            {% include "../_nav_item.html" with href="#document-update" content="/api/visa/document/:pk/update/" %}
+            {% include "../_nav_item.html" with href="#document-toggle-active" content="/api/visa/document/:pk/toggle-active/" %}
+            {% include "../_nav_item.html" with href="#document-delete" content="/api/visa/document/:pk/delete/" %}
+            {% include "../_nav_item.html" with href="#document-details" content="/api/visa/document/:pk/" %}
+        </ul>
+    </div>
+</li>
+{% endwith %}

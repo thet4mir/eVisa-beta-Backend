@@ -1,0 +1,60 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}visa-person-number-generate{% endblock %}
+{% block link_target_request_tab       %}visa-person-number-generate-request{% endblock %}
+{% block link_target_request_tab_pane  %}visa-person-number-generate-request{% endblock %}
+{% block link_target_response_tab      %}visa-person-number-generate-response{% endblock %}
+{% block link_target_response_tab_pane %}visa-person-number-generate-response{% endblock %}
+
+
+{% block title %}
+Generate visa person number
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/visa/person-number/admin/generate/
+{% endblock %}
+
+{% block content %}
+<p>Визийн хүн нэг бүр дээр оноох дугаарыг урьдчилан үүсгэх</p>
+<p>60 секундын хугацааны хязгаарт багтаан үүсгэж чадсан дугаарын тоог буцаана.</p>
+<p><code>amount</code> параметрт заагдсан хэмжээнээс цөөнийг үүсгэж болзошгүй.</p>
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "length": 8,
+    "amount": 1000000
+}
+</code></pre></div>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "amount": 999800
+}
+</code></pre></div>
+
+<p>Payload (нэвтэрсэн):</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": false,
+    "form_errors": {
+        "length": ["12-с ихгүй оруулна уу!"],
+        "amount": ["1000000-с ихгүй оруулна уу!"],
+    }
+}
+</code></pre></div>
+{% endblock response %}

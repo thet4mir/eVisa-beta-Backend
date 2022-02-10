@@ -1,0 +1,104 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}country-create{% endblock %}
+{% block link_target_request_tab       %}country-create-request{% endblock %}
+{% block link_target_request_tab_pane  %}country-create-request{% endblock %}
+{% block link_target_response_tab      %}country-create-response{% endblock %}
+{% block link_target_response_tab_pane %}country-create-response{% endblock %}
+
+
+{% block title %}
+Create Country
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/country/admin/create/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+<table class="table table-hover">
+    <thead>
+        <th> Parameter </th>
+        <th> Type </th>
+        <th> Position </th>
+        <th> # </th>
+        <th> Description </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-muted"> name </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> name of language  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> nationality </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> nationality</td>
+        </tr>
+        <tr>
+            <td class="text-muted"> is_active </td>
+            <td> <code> boolean </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> this is activated  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> code_alpha2 </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> Alpha 2 code  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> code_alpha3 </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> Alpha 3 code  </td>
+        </tr>
+        <tr>
+            <td class="text-muted"> code_numeric </td>
+            <td> <code> string </code> </td>
+            <td> <code> body </code> </td>
+            <td> <code> Required </code> </td>
+            <td class="text-muted"> Numeric code  </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "item": {
+        "id": 1,
+        "name": "...",
+        "nationality": "...",
+        "is_active": false,
+        'code_alpha2': "...",
+        'code_alpha3': "...",
+        'code_numeric': "...",
+        "created_at": "2021-02-07 00:00:00",
+        "updated_at": "2021-02-07 00:00:00"
+    },
+    "form_errors": {}
+}
+</code></pre></div>
+{% endblock response %}

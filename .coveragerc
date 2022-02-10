@@ -1,0 +1,10 @@
+[run]
+command_line=manage.py test --keepdb
+source =
+    .
+omit =
+    main/wsgi.py
+    main/asgi.py
+    **/migrations/*
+    main/settings/dev.py
+    manage.py

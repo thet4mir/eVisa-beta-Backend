@@ -1,0 +1,53 @@
+{% extends "../layouts/endpoint.html" %}
+
+{% block link_target_title             %}secure-login-options{% endblock %}
+{% block link_target_request_tab       %}secure-login-options-request{% endblock %}
+{% block link_target_request_tab_pane  %}secure-login-options-request{% endblock %}
+{% block link_target_response_tab      %}secure-login-options-response{% endblock %}
+{% block link_target_response_tab_pane %}secure-login-options-response{% endblock %}
+
+
+{% block title %}
+Login Options
+{% endblock %}
+
+{% block http_method %}
+{% include "../_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/auth/login/options/
+{% endblock %}
+
+{% block content %}
+<p> Нэвтрэхэд шаардлагатай мэдээллийг серверээс авна. </p>
+<p> Captcha идэвхитэй гэж тохируулсан бол <code>site_key</code> ирүүлнэ.</p>
+<p> Captcha идэвхигүй бол <code>site_key = ''</code> байна.</p>
+{% endblock %}
+
+
+{% block request %}
+<pre class="mb-0"><code>
+{}
+</code></pre>
+{% endblock request %}
+
+
+{% block response %}
+<p> Captcha идэвхитэй гэж тохируулсан бол <code>site_key</code> ирүүлнэ.</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "recaptcha_site_key": "..."
+}
+</code></pre></div>
+
+<p> Captcha идэвхигүй бол <code>site_key = ''</code> байна.</p>
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+{
+    "is_success": true,
+    "recaptcha_site_key": ""
+}
+</code></pre></div>
+{% endblock response %}

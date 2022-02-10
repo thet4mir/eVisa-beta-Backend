@@ -1,0 +1,56 @@
+from .base import *  # noqa
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = ''
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE'    : 'django.db.backends.mysql',
+        'NAME'      : '',
+        'USER'      : '',
+        'PASSWORD'  : '',
+        'HOST'      : '',
+        'PORT'      : 3306,
+        'OPTIONS'   : {
+
+        },
+        'ATOMIC_REQUESTS': True,
+    }
+}
+
+if DEBUG == False:
+   import logging.config
+
+   logging.config.dictConfig({
+       'version': 1,
+       'disable_existing_loggers': False,
+       'formatters': {
+           'console': {
+               'format': '%(asctime)s %(levelname)s [%(name)s:%(lineno)s] %(module)s %(process)d %(thread)d %(message)s',
+           },
+       },
+       'handlers': {
+           'console': {
+               'class': 'logging.StreamHandler',
+               'formatter': 'console',
+           },
+       },
+       'loggers': {
+           '': {
+               'handlers': ['console'],
+               'level': 'INFO',
+           },
+       },
+   })

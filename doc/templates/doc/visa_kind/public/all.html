@@ -1,0 +1,69 @@
+{% extends "doc/layouts/endpoint.html" %}
+
+{% block link_target_title             %}visa-kind-public-all{% endblock %}
+{% block link_target_request_tab       %}visa-kind-public-all-request{% endblock %}
+{% block link_target_request_tab_pane  %}visa-kind-public-all-request{% endblock %}
+{% block link_target_response_tab      %}visa-kind-public-all-response{% endblock %}
+{% block link_target_response_tab_pane %}visa-kind-public-all-response{% endblock %}
+
+
+{% block title %}
+Visa Kind Public List
+{% endblock %}
+
+{% block http_method %}
+{% include "doc/_http_method.html" with method="post" %}
+{% endblock %}
+
+
+{% block endpoint %}
+/api/visa/kind/public/all/
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block request %}
+<p>Payload:</p>
+{% endblock request %}
+
+
+{% block response %}
+<p>Payload:</p>
+
+<div class="bg-light border rounded py-1 ps-3 mb-3"><pre><code>
+    {
+        "is_success": True,
+        "items": [
+            {
+                "id": "",
+                "title": "",
+                "description": "",
+                "days_stay": "",
+                "days_valid": "",
+                "entry_kind": "",
+                "fee_person": ""
+            },
+            {
+                "id": "",
+                "title": "",
+                "description": "",
+                "days_stay": "",
+                "days_valid": "",
+                "entry_kind": "",
+                "fee_person": ""
+            },
+            {
+                "id": "",
+                "title": "",
+                "description": "",
+                "days_stay": "",
+                "days_valid": "",
+                "entry_kind": "",
+                "fee_person": ""
+            }
+        ]
+    }
+</code></pre></div>
+{% endblock response %}
